@@ -32,7 +32,8 @@ export async function saveSubscription(
   if (createAction) {
     await fauna.query(
       q.Create(
-        q.Collection('subscriptions', {data: subscriptionData})
+        q.Collection('subscriptions'),
+        {data: subscriptionData}
       )
     )
   } else {
