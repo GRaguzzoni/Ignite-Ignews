@@ -26,8 +26,8 @@ export default function Post({post}: PostProps) {
           <h1>{post.title}</h1>
           <time>{post.updatedAt}</time>
           <div 
-          className={styles.postContent}
-          dangerouslySetInnerHTML={{__html: post.content }} 
+            className={styles.postContent}
+            dangerouslySetInnerHTML={{__html: post.content }} 
           />
         </article>
       </main>
@@ -36,7 +36,7 @@ export default function Post({post}: PostProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async({req, params}) => {
-  const session = await getSession({ req});
+  const session = await getSession({ req });
   const {slug } = params;
 
   if (!session?.activeSubscription) {
